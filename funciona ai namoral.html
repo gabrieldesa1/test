@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CRUD Básico</title>
+    <link rel="stylesheet" href="./assets/stylesheet/reset.css" />
+    <link rel="stylesheet" href="./assets/stylesheet/style.css" />
+    <script type="text/javascript" src="./assets/javascript/script.js"></script>
+<style>
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../font/Ubuntu-M.ttf") format("truetype");
+}
+
+#nav {
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(83, 43, 226);
+    color: white;
+    font-size: 2em;
+    font-family: Ubuntu;
+    text-align: center;
+    line-height: 14vh;
+}
+
+#input-data {
+    width: 90vw;
+    font-family: Ubuntu;
+    margin: 0 auto;
+    margin-top: 5vh;
+    display: flex;
+}
+
+.input-text {
+    flex: 1;
+    min-width: 210px;
+    margin: 5px;
+    height: 35px;
+    padding-left: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #262626;
+    transition: 0.25s;
+    outline: none;
+}
+
+.input-text:focus{
+    border-color: rgb(83, 43, 226);
+}
+
+.input-btn {
+    flex: 1;
+    margin: 5px;
+    height: 39px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #262626;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.input-btn:hover {
+    background-color: #383838;
+    border-color: #383838;
+    color: white;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+#myTable {
+    font-family: Ubuntu;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5vh;
+    border-collapse: collapse;
+}
+
+#myTable th {
+    background-color: rgb(83, 43, 226);
+    padding: 10px;
+    color: white;
+    font-weight: 100;
+}
+
+#myTable td, th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#myTable td{
+    padding: 5px;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#myTable tr:hover {
+    background-color: #ddd;
+}
+
+.remove-btn{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-width: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+    
+</style>
+</head>
+
+<body>
+    
+    <div id="nav">
+        CRUD BÁSICO
+    </div>
+    <section id="table">
+        <form method="POST">
+            <div id="input-data">
+                <input id="Nome" class="input-text" placeholder="Nome" type="text" required />
+                <input id="email" class="input-text" placeholder="Email" type="email" required />
+                <input id="Telefone" class="input-text" placeholder="Telefone" type="number" required />
+                <input id="Formação" class="input-text" placeholder="Formação" type="text" required />
+                <input class="input-btn" type="submit" value="Enviar" onclick="return addToTable()" />
+            </div>
+        </form>
+        <table id="myTable">
+            <tr id="0">
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Formação</th>
+                <th>Ação</th>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
